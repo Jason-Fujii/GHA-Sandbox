@@ -1,0 +1,21 @@
+name: main
+on: push
+jobs:
+  Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
+  Windows:
+    runs-on: windows-latest
+    steps:
+      - run: date
+  Mac:
+    runs-on: macos-latest
+    steps:
+      - run: date
+  Dependent:
+    needs: [Ubuntu, Windows, Mac]
+    runs-on: macos-latest
+    steps:
+      - run: date
+    
